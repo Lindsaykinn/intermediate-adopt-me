@@ -66,7 +66,8 @@ const SearchParams = () => {
         <label className="search-label" htmlFor="breed">
           Breed
           <select
-            className="search-control"
+            className="search-control disabled:opacity-50"
+            disabled={!breeds.length}
             value={breed}
             id="breed"
             onChange={(e) => updateBreed(e.target.value)}
@@ -93,7 +94,10 @@ const SearchParams = () => {
             <option value="peru">Peru</option>
           </select>
         </label>
-        <button className="search-control" style={{ backgroundColor: theme }}>
+        <button
+          className="rounded px-6 py-2 text-white hover:opacity-50 border-none"
+          style={{ backgroundColor: theme }}
+        >
           Submit
         </button>
       </form>
