@@ -35,10 +35,10 @@ const SearchParams = () => {
           requestPets();
         }}
       >
-        <label htmlFor="location">
+        <label className="search-label" htmlFor="location">
           Location
           <input
-            className="w-60 my-5"
+            className="search-control"
             type="text"
             id="location"
             onChange={(e) => updateLocation(e.target.value)}
@@ -46,10 +46,10 @@ const SearchParams = () => {
             placeholder="Location"
           />
         </label>
-        <label htmlFor="animal">
+        <label className="search-label" htmlFor="animal">
           Animal
           <select
-            className="w-60 my-5"
+            className="search-control"
             value={animal}
             id="animal"
             onChange={(e) => updateAnimal(e.target.value)}
@@ -63,10 +63,10 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
-        <label htmlFor="breed">
+        <label className="search-label" htmlFor="breed">
           Breed
           <select
-            className="w-60 my-5"
+            className="search-control"
             value={breed}
             id="breed"
             onChange={(e) => updateBreed(e.target.value)}
@@ -80,9 +80,9 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
-        <label htmlFor="theme">
+        <label className="search-label" htmlFor="theme">
           <select
-            className="w-60 my-5"
+            className="search-control"
             value={theme}
             onChange={(e) => setTheme(e.target.value)}
             onBlur={(e) => setTheme(e.target.value)}
@@ -93,7 +93,9 @@ const SearchParams = () => {
             <option value="peru">Peru</option>
           </select>
         </label>
-        <button style={{ backgroundColor: theme }}>Submit</button>
+        <button className="search-control" style={{ backgroundColor: theme }}>
+          Submit
+        </button>
       </form>
       <Results pets={pets} />
     </div>
