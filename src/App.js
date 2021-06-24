@@ -31,7 +31,12 @@ const App = () => {
   const themeHook = useState("darkblue");
   return (
     <ThemeContext.Provider value={themeHook}>
-      <div>
+      <div
+        className="p-0 m-0"
+        style={{
+          background: "url(http://pets-images.dev-apis.com/pets/wallpaperA.jpg",
+        }}
+      >
         <Router>
           <header>
             <Link to="/">
