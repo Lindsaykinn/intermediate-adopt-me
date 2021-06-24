@@ -6,9 +6,9 @@ import useBreedList from "./useBreedList";
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
 const SearchParams = () => {
-  const [location, setLocation] = useState("");
-  const [animal, setAnimal] = useState("");
-  const [breed, setBreed] = useState("");
+  const [location, updateLocation] = useState("");
+  const [animal, updateAnimal] = useState("");
+  const [breed, updateBreed] = useState("");
   const [pets, setPets] = useState([]);
   const [breeds] = useBreedList(animal);
   const [theme, setTheme] = useContext(ThemeContext);
@@ -38,9 +38,10 @@ const SearchParams = () => {
         <label htmlFor="location">
           Location
           <input
+            className="w-60 my-5"
             type="text"
             id="location"
-            onChange={(e) => setLocation(e.target.value)}
+            onChange={(e) => updateLocation(e.target.value)}
             value={location}
             placeholder="Location"
           />
@@ -48,10 +49,11 @@ const SearchParams = () => {
         <label htmlFor="animal">
           Animal
           <select
+            className="w-60 my-5"
             value={animal}
             id="animal"
-            onChange={(e) => setAnimal(e.target.value)}
-            onBlur={(e) => setAnimal(e.target.value)}
+            onChange={(e) => updateAnimal(e.target.value)}
+            onBlur={(e) => updateAnimal(e.target.value)}
           >
             <option />
             {ANIMALS.map((animal) => (
@@ -64,10 +66,11 @@ const SearchParams = () => {
         <label htmlFor="breed">
           Breed
           <select
+            className="w-60 my-5"
             value={breed}
             id="breed"
-            onChange={(e) => setBreed(e.target.value)}
-            onBlur={(e) => setBreed(e.target.value)}
+            onChange={(e) => updateBreed(e.target.value)}
+            onBlur={(e) => updateBreed(e.target.value)}
           >
             <option />
             {breeds.map((breed) => (
@@ -79,6 +82,7 @@ const SearchParams = () => {
         </label>
         <label htmlFor="theme">
           <select
+            className="w-60 my-5"
             value={theme}
             onChange={(e) => setTheme(e.target.value)}
             onBlur={(e) => setTheme(e.target.value)}

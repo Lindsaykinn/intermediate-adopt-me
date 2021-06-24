@@ -32,7 +32,7 @@ const App = () => {
   return (
     <ThemeContext.Provider value={themeHook}>
       <div
-        className="p-0 m-0"
+        className="p-0 mb-0"
         style={{
           background: "url(http://pets-images.dev-apis.com/pets/wallpaperA.jpg",
         }}
